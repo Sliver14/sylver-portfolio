@@ -243,7 +243,7 @@ export default function PortfolioSection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Button size="lg" className="bg-primary hover:bg-blue-700">
+          <Button size="lg" className="bg-primary hover:bg-primary/80 dark:bg-primary dark:hover:bg-primary/80 pulse-glow">
             View All Projects
           </Button>
         </motion.div>

@@ -120,11 +120,11 @@ export default function ContactSection() {
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="firstName">First Name</Label>
+                      <Label htmlFor="firstName" className="text-secondary dark:text-foreground">First Name</Label>
                       <Input
                         id="firstName"
                         {...form.register("firstName")}
-                        className="mt-2"
+                        className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
                       />
                       {form.formState.errors.firstName && (
                         <p className="text-red-500 text-sm mt-1">
@@ -133,11 +133,11 @@ export default function ContactSection() {
                       )}
                     </div>
                     <div>
-                      <Label htmlFor="lastName">Last Name</Label>
+                      <Label htmlFor="lastName" className="text-secondary dark:text-foreground">Last Name</Label>
                       <Input
                         id="lastName"
                         {...form.register("lastName")}
-                        className="mt-2"
+                        className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
                       />
                       {form.formState.errors.lastName && (
                         <p className="text-red-500 text-sm mt-1">
@@ -147,12 +147,12 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div>
-                    <Label htmlFor="email">Email Address</Label>
+                    <Label htmlFor="email" className="text-secondary dark:text-foreground">Email Address</Label>
                     <Input
                       id="email"
                       type="email"
                       {...form.register("email")}
-                      className="mt-2"
+                      className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
                     />
                     {form.formState.errors.email && (
                       <p className="text-red-500 text-sm mt-1">
@@ -161,12 +161,12 @@ export default function ContactSection() {
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="projectType">Project Type</Label>
+                    <Label htmlFor="projectType" className="text-secondary dark:text-foreground">Project Type</Label>
                     <Select onValueChange={(value) => form.setValue("projectType", value)}>
-                      <SelectTrigger className="mt-2">
+                      <SelectTrigger className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground">
                         <SelectValue placeholder="Select a project type" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-white dark:bg-background border-gray-300 dark:border-gray-600">
                         <SelectItem value="web">Web Application</SelectItem>
                         <SelectItem value="mobile">Mobile App</SelectItem>
                         <SelectItem value="fullstack">Full Stack Development</SelectItem>
@@ -181,12 +181,12 @@ export default function ContactSection() {
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="budget">Budget Range</Label>
+                    <Label htmlFor="budget" className="text-secondary dark:text-foreground">Budget Range</Label>
                     <Select onValueChange={(value) => form.setValue("budget", value)}>
-                      <SelectTrigger className="mt-2">
+                      <SelectTrigger className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground">
                         <SelectValue placeholder="Select budget range" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-white dark:bg-background border-gray-300 dark:border-gray-600">
                         <SelectItem value="5-10k">$5,000 - $10,000</SelectItem>
                         <SelectItem value="10-25k">$10,000 - $25,000</SelectItem>
                         <SelectItem value="25-50k">$25,000 - $50,000</SelectItem>
@@ -200,13 +200,13 @@ export default function ContactSection() {
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="message">Project Details</Label>
+                    <Label htmlFor="message" className="text-secondary dark:text-foreground">Project Details</Label>
                     <Textarea
                       id="message"
                       {...form.register("message")}
                       rows={4}
                       placeholder="Tell me about your project..."
-                      className="mt-2"
+                      className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
                     />
                     {form.formState.errors.message && (
                       <p className="text-red-500 text-sm mt-1">
@@ -261,60 +261,60 @@ export default function ContactSection() {
 
             <div className="space-y-6">
               <div className="flex items-center">
-                <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mr-4">
                   <Mail className="text-primary h-6 w-6" />
                 </div>
                 <div>
-                  <div className="font-semibold text-secondary">Email</div>
-                  <div className="text-gray-600">alex.chen@example.com</div>
+                  <div className="font-semibold text-secondary dark:text-foreground">Email</div>
+                  <div className="text-gray-600 dark:text-gray-300">alex.chen@example.com</div>
                 </div>
               </div>
 
               <div className="flex items-center">
-                <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mr-4">
                   <Phone className="text-primary h-6 w-6" />
                 </div>
                 <div>
-                  <div className="font-semibold text-secondary">Phone</div>
-                  <div className="text-gray-600">+1 (555) 123-4567</div>
+                  <div className="font-semibold text-secondary dark:text-foreground">Phone</div>
+                  <div className="text-gray-600 dark:text-gray-300">+1 (555) 123-4567</div>
                 </div>
               </div>
 
               <div className="flex items-center">
-                <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mr-4">
                   <MapPin className="text-primary h-6 w-6" />
                 </div>
                 <div>
-                  <div className="font-semibold text-secondary">Location</div>
-                  <div className="text-gray-600">San Francisco, CA</div>
+                  <div className="font-semibold text-secondary dark:text-foreground">Location</div>
+                  <div className="text-gray-600 dark:text-gray-300">San Francisco, CA</div>
                 </div>
               </div>
 
               <div className="flex items-center">
-                <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mr-4">
                   <Clock className="text-primary h-6 w-6" />
                 </div>
                 <div>
-                  <div className="font-semibold text-secondary">Response Time</div>
-                  <div className="text-gray-600">Within 24 hours</div>
+                  <div className="font-semibold text-secondary dark:text-foreground">Response Time</div>
+                  <div className="text-gray-600 dark:text-gray-300">Within 24 hours</div>
                 </div>
               </div>
             </div>
 
             <div className="pt-8">
-              <h4 className="text-lg font-semibold text-secondary mb-4">Follow Me</h4>
+              <h4 className="text-lg font-semibold text-secondary dark:text-foreground mb-4">Follow Me</h4>
               <div className="flex space-x-4">
-                <a href="#" className="bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-lg transition-colors duration-200">
-                  <Github className="h-5 w-5" />
+                <a href="#" className="bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
+                  <Github className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
-                <a href="#" className="bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-lg transition-colors duration-200">
-                  <Linkedin className="h-5 w-5" />
+                <a href="#" className="bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
+                  <Linkedin className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
-                <a href="#" className="bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-lg transition-colors duration-200">
-                  <Twitter className="h-5 w-5" />
+                <a href="#" className="bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
+                  <Twitter className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
-                <a href="#" className="bg-gray-100 hover:bg-primary hover:text-white p-3 rounded-lg transition-colors duration-200">
-                  <Dribbble className="h-5 w-5" />
+                <a href="#" className="bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
+                  <Dribbble className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
               </div>
             </div>
