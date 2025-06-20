@@ -31,8 +31,16 @@ export default function SkillsSection() {
   const { data: githubStats, isLoading } = useGithubStats("alexchen");
 
   return (
-    <section id="skills" className="py-20 lg:py-32 bg-neutral">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 lg:py-32 bg-neutral dark:bg-background relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-24 left-12 w-28 h-28 bg-accent/10 dark:bg-accent/20 rounded-full blur-2xl floating-animation"></div>
+        <div className="absolute bottom-32 right-24 w-36 h-36 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl floating-animation" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-accent/15 dark:bg-accent/25 rounded-full blur-xl rotate-slow"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-12 h-12 bg-primary/20 dark:bg-primary/30 rounded-full blur-sm bounce-gentle"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,10 +48,24 @@ export default function SkillsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-secondary mb-6">Skills & Technologies</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-3xl lg:text-5xl font-bold text-secondary dark:text-foreground mb-6"
+          >
+            Skills & <span className="text-gradient">Technologies</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+          >
             My technical toolkit for building modern, scalable applications
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -54,18 +76,31 @@ export default function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ y: -10, scale: 1.02 }}
             >
-              <Card className="h-full hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-8 text-center">
-                  <img
+              <Card className="h-full hover:shadow-2xl dark:hover:shadow-primary/20 transition-all duration-500 bg-white dark:bg-card border-2 border-transparent hover:border-primary/20 dark:hover:border-primary/30 group">
+                <CardContent className="p-8 text-center relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <motion.img
                     src={category.icon}
                     alt={`${category.title} technology stack`}
-                    className="w-16 h-16 mx-auto mb-4 rounded-lg object-cover"
+                    className="w-16 h-16 mx-auto mb-4 rounded-lg object-cover relative z-10 group-hover:scale-110 transition-transform duration-300"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
                   />
-                  <h3 className="text-xl font-semibold text-secondary mb-2">{category.title}</h3>
-                  <ul className="text-gray-600 space-y-1">
-                    {category.skills.map((skill) => (
-                      <li key={skill}>{skill}</li>
+                  <h3 className="text-xl font-semibold text-secondary dark:text-foreground mb-2 relative z-10 group-hover:text-primary dark:group-hover:text-primary transition-colors duration-300">{category.title}</h3>
+                  <ul className="text-gray-600 dark:text-gray-300 space-y-1 relative z-10">
+                    {category.skills.map((skill, skillIndex) => (
+                      <motion.li 
+                        key={skill}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: (index * 0.1) + (skillIndex * 0.1) }}
+                        viewport={{ once: true }}
+                        className="group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300"
+                      >
+                        {skill}
+                      </motion.li>
                     ))}
                   </ul>
                 </CardContent>
@@ -81,31 +116,71 @@ export default function SkillsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Card className="shadow-lg">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-secondary mb-6 text-center">GitHub Activity</h3>
+          <Card className="shadow-2xl dark:shadow-primary/10 bg-white dark:bg-card border-2 border-primary/10 dark:border-primary/20 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:to-accent/10"></div>
+            <CardContent className="p-8 relative z-10">
+              <motion.h3 
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-2xl font-bold text-secondary dark:text-foreground mb-6 text-center"
+              >
+                <span className="text-gradient">GitHub</span> Activity
+              </motion.h3>
               <div className="grid md:grid-cols-3 gap-8 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    {isLoading ? "..." : githubStats?.public_repos || "127"}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="group"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="text-3xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {isLoading ? (
+                      <div className="inline-block w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                    ) : (
+                      githubStats?.public_repos || "127"
+                    )}
                   </div>
-                  <div className="text-gray-600">Public Repositories</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">1,847</div>
-                  <div className="text-gray-600">Contributions This Year</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">234</div>
-                  <div className="text-gray-600">Stars Received</div>
-                </div>
+                  <div className="text-gray-600 dark:text-gray-400">Public Repositories</div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="group"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="text-3xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">1,847</div>
+                  <div className="text-gray-600 dark:text-gray-400">Contributions This Year</div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="group"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="text-3xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">234</div>
+                  <div className="text-gray-600 dark:text-gray-400">Stars Received</div>
+                </motion.div>
               </div>
-              <div className="mt-8 text-center">
-                <Button className="bg-secondary hover:bg-gray-800">
-                  <Github className="mr-2 h-4 w-4" />
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="mt-8 text-center"
+              >
+                <Button className="bg-secondary dark:bg-primary hover:bg-gray-800 dark:hover:bg-primary/80 pulse-glow group">
+                  <Github className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
                   View GitHub Profile
                 </Button>
-              </div>
+              </motion.div>
             </CardContent>
           </Card>
         </motion.div>

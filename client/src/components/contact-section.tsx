@@ -60,8 +60,16 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 lg:py-32 bg-white dark:bg-neutral relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-24 left-16 w-32 h-32 bg-primary/10 dark:bg-primary/20 rounded-full blur-2xl floating-animation"></div>
+        <div className="absolute bottom-32 right-20 w-40 h-40 bg-accent/8 dark:bg-accent/15 rounded-full blur-3xl floating-animation" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-primary/15 dark:bg-primary/25 rounded-full blur-xl rotate-slow"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-18 h-18 bg-accent/20 dark:bg-accent/30 rounded-full blur-sm bounce-gentle"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,10 +77,24 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-secondary mb-6">Let's Work Together</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-3xl lg:text-5xl font-bold text-secondary dark:text-foreground mb-6"
+          >
+            Let's Work <span className="text-gradient">Together</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+          >
             Ready to bring your next project to life? Let's discuss how I can help you achieve your goals.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16">
@@ -83,9 +105,18 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-neutral">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-secondary mb-6">Send Me a Message</h3>
+            <Card className="bg-neutral dark:bg-card border-2 border-primary/10 dark:border-primary/20 shadow-2xl dark:shadow-primary/10 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10"></div>
+              <CardContent className="p-8 relative z-10">
+                <motion.h3 
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-2xl font-bold text-secondary dark:text-foreground mb-6"
+                >
+                  Send Me a <span className="text-gradient">Message</span>
+                </motion.h3>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -183,14 +214,30 @@ export default function ContactSection() {
                       </p>
                     )}
                   </div>
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-primary hover:bg-blue-700"
-                    disabled={isSubmitting}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    viewport={{ once: true }}
                   >
-                    <Send className="mr-2 h-4 w-4" />
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
+                    <motion.button
+                      type="submit" 
+                      className="w-full bg-primary hover:bg-primary/80 dark:bg-primary dark:hover:bg-primary/80 pulse-glow group px-4 py-2 rounded-md font-medium text-white transition-colors duration-200"
+                      disabled={isSubmitting}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                      {isSubmitting ? (
+                        <div className="flex items-center">
+                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                          Sending...
+                        </div>
+                      ) : (
+                        "Send Message"
+                      )}
+                    </motion.button>
+                  </motion.div>
                 </form>
               </CardContent>
             </Card>
