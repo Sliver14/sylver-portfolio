@@ -12,7 +12,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="pt-16 bg-gradient-to-br from-neutral to-white dark:from-background dark:to-neutral min-h-screen flex items-center relative overflow-hidden">
+    <section id="home" className="pt-16 bg-gradient-to-br from-background to-neutral dark:from-background dark:to-neutral min-h-screen flex items-center relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl floating-animation"></div>

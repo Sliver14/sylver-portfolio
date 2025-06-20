@@ -9,7 +9,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 lg:py-32 bg-white dark:bg-neutral relative overflow-hidden">
+    <section id="about" className="py-20 lg:py-32 bg-neutral dark:bg-neutral relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-32 right-16 w-32 h-32 bg-primary/10 dark:bg-primary/20 rounded-full blur-2xl floating-animation"></div>

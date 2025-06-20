@@ -83,7 +83,7 @@ export default function PortfolioSection() {
   );
 
   return (
-    <section id="portfolio" className="py-20 lg:py-32 bg-white dark:bg-neutral relative overflow-hidden">
+    <section id="portfolio" className="py-20 lg:py-32 bg-neutral dark:bg-neutral relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-16 left-8 w-40 h-40 bg-primary/8 dark:bg-primary/15 rounded-full blur-3xl floating-animation"></div>
