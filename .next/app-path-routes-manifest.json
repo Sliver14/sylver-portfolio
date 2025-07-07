@@ -1,0 +1,7 @@
+{
+  "/api/contact/route": "/api/contact",
+  "/api/github/[username]/route": "/api/github/[username]",
+  "/_not-found/page": "/_not-found",
+  "/api/github/[username]/repos/route": "/api/github/[username]/repos",
+  "/page": "/"
+}
