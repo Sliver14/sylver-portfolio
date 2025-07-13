@@ -44,7 +44,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-gradient wiggle">SO</span>
+            <span className="text-2xl font-bold wiggle">SO</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -54,11 +54,11 @@ export default function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-secondary dark:text-foreground hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-110 relative group"
+                  className="nav-link px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-110 relative group"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {item.label}
-                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </button>
               ))}
             </div>

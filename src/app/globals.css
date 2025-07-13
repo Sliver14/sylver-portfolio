@@ -3,31 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222.2 84% 4.9%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96%;
-  --accent-foreground: 222.2 84% 4.9%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
-  --radius: 0.5rem;
-  --chart-1: 12 76% 61%;
-  --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
+  --background: 30 24% 12%; /* #1E1E2F */
+  --foreground: 0 0% 100%; /* #FFFFFF */
+  --card: 240 16% 19%; /* #2A2A3C */
+  --card-foreground: 0 0% 100%; /* #FFFFFF */
+  --popover: 240 16% 19%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 36 95% 57%; /* #F5A623 */
+  --primary-foreground: 240 24% 12%; /* #1E1E2F */
+  --secondary: 0 0% 100%; /* #FFFFFF */
+  --secondary-foreground: 36 95% 57%; /* #F5A623 */
+  --muted: 240 10% 30%; /* #3A3A4F */
+  --muted-foreground: 0 0% 67%; /* #AAAAAA */
+  --accent: 36 95% 57%; /* #F5A623 */
+  --accent-foreground: 240 24% 12%; /* #1E1E2F */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 10% 30%; /* #3A3A4F */
+  --input: 240 10% 30%;
+  --ring: 36 95% 57%;
+  --radius: 0.5rem; /* 8px */
+  --chart-1: 36 95% 57%;
+  --chart-2: 240 16% 19%;
+  --chart-3: 0 0% 100%;
+  --chart-4: 0 0% 67%;
+  --chart-5: 240 10% 30%;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
 }
 
 .dark {
@@ -64,6 +65,59 @@
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.card, .bg-card {
+  background-color: hsl(var(--card));
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  border: 1px solid hsl(var(--border));
+}
+
+.button-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.button-primary:hover {
+  background: hsl(var(--accent));
+}
+
+.button-secondary {
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: 500;
+}
+
+.nav-link {
+  color: hsl(var(--foreground));
+  transition: color 0.2s;
+  margin-right: 20px;
+}
+.nav-link:hover {
+  color: hsl(var(--primary));
+}
+
+.icon {
+  color: #AAAAAA;
+  width: 24px;
+  height: 24px;
+  transition: color 0.2s;
+}
+.icon:hover {
+  color: hsl(var(--accent));
 }
 
 /* Custom Component Classes */

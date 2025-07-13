@@ -1,0 +1,157 @@
+{
+  "designSystem": {
+    "name": "Abhishek Portfolio UI",
+    "version": "1.0",
+    "platform": "Web",
+    "designPhilosophy": "Modern futuristic interface with gradient accents, dark mode, and vibrant neon typography. Built to impress, inform, and showcase talent effectively.",
+
+    "layout": {
+      "container": {
+        "maxWidth": "1280px",
+        "paddingX": "1rem",
+        "marginX": "auto"
+      },
+      "sections": [
+        "Hero",
+        "About Me",
+        "Stats",
+        "Portfolio Showcase",
+        "Contact",
+        "Footer"
+      ],
+      "sectionSpacing": "6rem",
+      "sectionPadding": "2rem"
+    },
+
+    "typography": {
+      "fontFamily": "Inter, sans-serif",
+      "fontWeight": {
+        "light": 300,
+        "regular": 400,
+        "semibold": 600,
+        "bold": 700
+      },
+      "headings": {
+        "h1": { "size": "2.5rem", "weight": "bold" },
+        "h2": { "size": "2rem", "weight": "bold" },
+        "h3": { "size": "1.5rem", "weight": "semibold" },
+        "sectionTitle": {
+          "style": "Dual-colored",
+          "colorSplit": ["#FFFFFF", "#B478F0"]
+        }
+      },
+      "body": {
+        "size": "1rem",
+        "lineHeight": "1.6",
+        "color": "#CCCCCC"
+      }
+    },
+
+    "colorSystem": {
+      "background": "#0A0A0F",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#AAAAAA",
+      "accentPrimary": "#B478F0",
+      "accentSecondary": "#478EFF",
+      "buttonGradient": ["#7A60F9", "#9773FE"],
+      "cardBackground": "#11111A",
+      "inputBackground": "#1C1C28",
+      "border": "#2C2C3A"
+    },
+
+    "components": {
+      "button": {
+        "default": {
+          "padding": "0.75rem 1.5rem",
+          "borderRadius": "8px",
+          "background": "linear-gradient(to right, #7A60F9, #9773FE)",
+          "textColor": "#FFFFFF",
+          "fontWeight": "semibold",
+          "hoverEffect": "shadow-glow"
+        },
+        "secondary": {
+          "border": "1px solid #7A60F9",
+          "background": "transparent",
+          "hoverBackground": "#7A60F933"
+        }
+      },
+      "badge": {
+        "style": "rounded-sm",
+        "background": "#1C1C28",
+        "textColor": "#CCCCCC",
+        "padding": "0.25rem 0.75rem"
+      },
+      "card": {
+        "background": "#12121C",
+        "borderRadius": "12px",
+        "shadow": "0 4px 20px rgba(180, 120, 240, 0.1)",
+        "padding": "1.25rem",
+        "titleColor": "#FFFFFF",
+        "textColor": "#AAAAAA",
+        "hover": {
+          "translateY": "-4px",
+          "shadow": "0 8px 24px rgba(180, 120, 240, 0.2)"
+        }
+      },
+      "tabs": {
+        "active": {
+          "background": "#B478F0",
+          "textColor": "#FFFFFF"
+        },
+        "inactive": {
+          "background": "#1A1A27",
+          "textColor": "#AAAAAA"
+        },
+        "borderRadius": "10px",
+        "transition": "all 0.3s ease"
+      },
+      "form": {
+        "inputs": {
+          "padding": "0.75rem",
+          "borderRadius": "8px",
+          "background": "#1C1C28",
+          "border": "1px solid #2C2C3A",
+          "textColor": "#FFFFFF",
+          "placeholderColor": "#888888"
+        },
+        "button": "gradient"
+      }
+    },
+
+    "icons": {
+      "style": "neon glow icons",
+      "shape": "rounded square or circle",
+      "socials": ["LinkedIn", "Instagram", "GitHub"],
+      "interaction": "hover glow or bounce"
+    },
+
+    "animations": {
+      "hoverCard": "transform scale(1.02), shadow pop",
+      "buttonHover": "glow pulse",
+      "tabSwitch": "fade + slide"
+    },
+
+    "gridSystem": {
+      "columns": 12,
+      "gap": "1.5rem",
+      "portfolioItems": {
+        "desktop": "3 per row",
+        "tablet": "2 per row",
+        "mobile": "1 per row"
+      }
+    },
+
+    "accessibility": {
+      "colorContrast": "WCAG AA",
+      "keyboardNavigation": true,
+      "ariaLabels": true
+    },
+
+    "theming": {
+      "mode": "dark-only",
+      "primaryGradient": "linear-gradient(to right, #7A60F9, #9773FE)",
+      "glowEffects": true,
+      "neonTypography": true
+    }
+  }
+}

@@ -14,7 +14,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="pt-16 bg-gradient-to-br from-background to-neutral dark:from-background dark:to-neutral min-h-screen flex items-center relative overflow-hidden">
+    <section id="home" className="pt-8 bg-gradient-to-br from-background to-neutral min-h-screen flex items-center relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl floating-animation"></div>
@@ -23,37 +23,37 @@ export default function HeroSection() {
         <div className="absolute top-1/3 right-1/3 w-8 h-8 bg-accent/40 rounded-full blur-sm rotate-slow"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="order-2 lg:order-1"
+            // initial={{ opacity: 0, y: 20 }}
+            // animate={{ opacity: 1, y: 0 }}
+            // transition={{ duration: 0.6 }}
+            // className="order-2 lg:order-1"
           >
             <div className="mb-6">
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                // initial={{ opacity: 0, scale: 0.8 }}
+                // animate={{ opacity: 1, scale: 1 }}
+                // transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <Badge variant="secondary" className="mb-4 bg-accent/20 dark:bg-accent/30 text-accent dark:text-accent hover:bg-accent/30 dark:hover:bg-accent/40 pulse-glow">
-                  🚀 Available for New Projects
+                <Badge variant="secondary" className="mb-4 bg-accent/20 text-accent hover:bg-accent/30">
+                  Available for New Projects
                 </Badge>
               </motion.div>
               <motion.h1 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-4xl lg:text-6xl font-bold text-secondary dark:text-foreground leading-tight"
+                className="text-4xl lg:text-6xl font-bold text-[#e0e0ee] leading-tight"
               >
-                Hi, I'm <span className="text-gradient">Sylver Oyinaga</span>
+                Hi, I'm <span>Sylver Oyinaga</span>
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mt-4"
+                className="text-xl lg:text-2xl text-foreground mt-4"
               >
                 Full Stack Developer & Mobile App Specialist
               </motion.p>
@@ -62,7 +62,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
+              className="text-lg text-foreground mb-8 leading-relaxed"
             >
               With over 1 year of experience crafting beautiful, functional web applications and mobile solutions. 
               I help businesses transform their ideas into powerful digital experiences that users love.
@@ -73,11 +73,11 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button size="lg" className="bg-primary hover:bg-primary/80 dark:bg-primary dark:hover:bg-primary/80 pulse-glow group">
+              <Button size="lg" className="bg-primary hover:bg-primary/80">
                 <Download className="mr-2 h-4 w-4 group-hover:bounce-gentle" />
                 Download Resume
               </Button>
-              <Button size="lg" variant="outline" onClick={scrollToPortfolio} className="border-primary text-primary dark:border-primary dark:text-primary hover:bg-primary/10 dark:hover:bg-primary/20">
+              <Button size="lg" variant="outline" onClick={scrollToPortfolio} className="border-primary text-primary hover:bg-primary/10">
                 <Eye className="mr-2 h-4 w-4" />
                 View My Work
               </Button>
@@ -88,16 +88,16 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex items-center gap-6 mt-12"
             >
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-110">
+              <a href="#" className="icon hover:text-accent transition-all duration-300 hover:scale-110">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-110">
+              <a href="#" className="icon hover:text-accent transition-all duration-300 hover:scale-110">
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-110">
+              <a href="#" className="icon hover:text-accent transition-all duration-300 hover:scale-110">
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-110">
+              <a href="#" className="icon hover:text-accent transition-all duration-300 hover:scale-110">
                 <Mail className="h-6 w-6" />
               </a>
             </motion.div>
@@ -114,7 +114,7 @@ export default function HeroSection() {
               <motion.img
                 src="../assets/photo_2024-02-11_14-17-47.jpg"
                 alt="Professional headshot of Oyinaga Sylver"
-                className="relative rounded-2xl shadow-2xl w-full h-auto max-w-md mx-auto border-2 border-white/20 dark:border-white/10"
+                className="relative rounded-2xl shadow-2xl w-full h-96 max-w-md mx-auto border-2 border-white/20 object-cover"
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
               />

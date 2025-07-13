@@ -34,7 +34,6 @@ export function ThemeProvider({
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add("dark");
-    
     // Force dark theme
     root.style.colorScheme = "dark";
   }, []);

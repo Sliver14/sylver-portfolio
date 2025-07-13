@@ -33,13 +33,13 @@ export default function SkillsSection() {
   const { data: githubStats, isLoading } = useGithubStats("oyinagasylver");
 
   return (
-    <section id="skills" className="py-20 lg:py-32 bg-neutral dark:bg-background relative overflow-hidden">
+    <section id="skills" className="py-10 lg:py-16 bg-neutral relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-24 left-12 w-28 h-28 bg-accent/10 dark:bg-accent/20 rounded-full blur-2xl floating-animation"></div>
-        <div className="absolute bottom-32 right-24 w-36 h-36 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl floating-animation" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-accent/15 dark:bg-accent/25 rounded-full blur-xl rotate-slow"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-12 h-12 bg-primary/20 dark:bg-primary/30 rounded-full blur-sm bounce-gentle"></div>
+        <div className="absolute top-24 left-12 w-28 h-28 bg-accent/10 rounded-full blur-2xl floating-animation"></div>
+        <div className="absolute bottom-32 right-24 w-36 h-36 bg-primary/10 rounded-full blur-3xl floating-animation" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-accent/15 rounded-full blur-xl rotate-slow"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-12 h-12 bg-primary/20 rounded-full blur-sm bounce-gentle"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -55,16 +55,16 @@ export default function SkillsSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-3xl lg:text-5xl font-bold text-secondary dark:text-foreground mb-6"
+            className="text-3xl lg:text-5xl font-bold text-primary mb-6"
           >
-            Skills & <span className="text-gradient">Technologies</span>
+            Skills & <span>Technologies</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-foreground max-w-3xl mx-auto"
           >
             My technical toolkit for building modern, scalable applications
           </motion.p>
@@ -80,9 +80,9 @@ export default function SkillsSection() {
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
             >
-              <Card className="h-full hover:shadow-2xl dark:hover:shadow-primary/20 transition-all duration-500 bg-white dark:bg-card border-2 border-transparent hover:border-primary/20 dark:hover:border-primary/30 group">
+              <Card className="h-full hover:shadow-2xl transition-all duration-500 bg-black/20 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 group">
                 <CardContent className="p-8 text-center relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <motion.img
                     src={category.icon}
                     alt={`${category.title} technology stack`}
@@ -90,8 +90,8 @@ export default function SkillsSection() {
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   />
-                  <h3 className="text-xl font-semibold text-secondary dark:text-foreground mb-2 relative z-10 group-hover:text-primary dark:group-hover:text-primary transition-colors duration-300">{category.title}</h3>
-                  <ul className="text-gray-600 dark:text-gray-300 space-y-1 relative z-10">
+                  <h3 className="text-xl font-semibold text-primary mb-2 relative z-10 group-hover:text-primary transition-colors duration-300">{category.title}</h3>
+                  <ul className="text-foreground space-y-1 relative z-10">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.li 
                         key={skill}
@@ -99,7 +99,7 @@ export default function SkillsSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3, delay: (index * 0.1) + (skillIndex * 0.1) }}
                         viewport={{ once: true }}
-                        className="group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300"
+                        className="group-hover:transition-colors duration-300"
                       >
                         {skill}
                       </motion.li>
@@ -118,17 +118,17 @@ export default function SkillsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Card className="shadow-2xl dark:shadow-primary/10 bg-white dark:bg-card border-2 border-primary/10 dark:border-primary/20 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:to-accent/10"></div>
+                      <Card className="shadow-2xl bg-black/20 backdrop-blur-sm border-2 border-primary/10 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
             <CardContent className="p-8 relative z-10">
               <motion.h3 
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-2xl font-bold text-secondary dark:text-foreground mb-6 text-center"
+                className="text-2xl font-bold text-primary mb-6 text-center"
               >
-                <span className="text-gradient">GitHub</span> Activity
+                <span>GitHub</span> Activity
               </motion.h3>
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <motion.div
@@ -146,7 +146,7 @@ export default function SkillsSection() {
                       githubStats?.public_repos || "4"
                     )}
                   </div>
-                  <div className="text-gray-600 dark:text-gray-400">Public Repositories</div>
+                  <div className="text-foreground">Public Repositories</div>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ export default function SkillsSection() {
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="text-3xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">131</div>
-                  <div className="text-gray-600 dark:text-gray-400">Contributions This Year</div>
+                  <div className="text-foreground">Contributions This Year</div>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -168,7 +168,7 @@ export default function SkillsSection() {
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="text-3xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">2</div>
-                  <div className="text-gray-600 dark:text-gray-400">Stars Received</div>
+                  <div className="text-foreground">Stars Received</div>
                 </motion.div>
               </div>
               <motion.div 
@@ -180,7 +180,7 @@ export default function SkillsSection() {
               >
                 <a href="https://github.com/Sliver14"
                 target="_blank" rel="noopener noreferrer">
-                <Button className="bg-secondary dark:bg-primary hover:bg-gray-800 dark:hover:bg-primary/80 pulse-glow group">
+                <Button className="bg-secondary hover:bg-gray-800 text-primary">
                   <Github className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
                   View GitHub Profile
                 </Button>

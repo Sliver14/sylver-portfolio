@@ -12,12 +12,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-secondary dark:bg-background text-white dark:text-foreground py-12 relative overflow-hidden">
+    <footer className="bg-card text-foreground border-t border-border py-12 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-8 left-12 w-24 h-24 bg-primary/10 dark:bg-primary/20 rounded-full blur-xl floating-animation"></div>
-        <div className="absolute bottom-6 right-16 w-32 h-32 bg-accent/8 dark:bg-accent/15 rounded-full blur-2xl floating-animation" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-primary/15 dark:bg-primary/25 rounded-full blur-lg rotate-slow"></div>
+        <div className="absolute top-8 left-12 w-24 h-24 bg-accent/10 rounded-full blur-xl floating-animation"></div>
+        <div className="absolute bottom-6 right-16 w-32 h-32 bg-accent/8 rounded-full blur-2xl floating-animation" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-accent/15 rounded-full blur-lg rotate-slow"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -30,7 +30,7 @@ export default function Footer() {
               viewport={{ once: true }}
               className="text-2xl font-bold mb-4"
             >
-              <span className="text-gradient">Sylver Oyinaga</span>
+              <span>Sylver Oyinaga</span>
             </motion.div>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -130,7 +130,7 @@ export default function Footer() {
           className="border-t border-gray-700 dark:border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <div className="text-gray-300 dark:text-gray-400 mb-4 md:mb-0">
-            © 2024 Sylver Oyinaga. All rights reserved.
+            © 2025 Sylver Oyinaga. All rights reserved.
           </div>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-primary transition-colors duration-300 text-sm">

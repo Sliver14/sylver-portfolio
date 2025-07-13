@@ -62,13 +62,13 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-neutral dark:bg-neutral relative overflow-hidden">
+    <section id="contact" className="py-10 lg:py-16 bg-neutral relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-24 left-16 w-32 h-32 bg-primary/10 dark:bg-primary/20 rounded-full blur-2xl floating-animation"></div>
-        <div className="absolute bottom-32 right-20 w-40 h-40 bg-accent/8 dark:bg-accent/15 rounded-full blur-3xl floating-animation" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-primary/15 dark:bg-primary/25 rounded-full blur-xl rotate-slow"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-18 h-18 bg-accent/20 dark:bg-accent/30 rounded-full blur-sm bounce-gentle"></div>
+        <div className="absolute top-24 left-16 w-32 h-32 bg-primary/10 rounded-full blur-2xl floating-animation"></div>
+        <div className="absolute bottom-32 right-20 w-40 h-40 bg-accent/8 rounded-full blur-3xl floating-animation" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-primary/15 rounded-full blur-xl rotate-slow"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-18 h-18 bg-accent/20 rounded-full blur-sm bounce-gentle"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -84,16 +84,16 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-3xl lg:text-5xl font-bold text-secondary dark:text-foreground mb-6"
+            className="text-3xl lg:text-5xl font-bold text-primary mb-6"
           >
-            Let's Work <span className="text-gradient">Together</span>
+            Let's Work <span>Together</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-foreground max-w-3xl mx-auto"
           >
             Ready to bring your next project to life? Let's discuss how I can help you achieve your goals.
           </motion.p>
@@ -107,26 +107,26 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-neutral dark:bg-card border-2 border-primary/10 dark:border-primary/20 shadow-2xl dark:shadow-primary/10 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10"></div>
+            <Card className="bg-neutral border-2 border-primary/10 shadow-2xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"></div>
               <CardContent className="p-8 relative z-10">
                 <motion.h3 
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="text-2xl font-bold text-secondary dark:text-foreground mb-6"
+                  className="text-2xl font-bold text-primary mb-6"
                 >
-                  Send Me a <span className="text-gradient">Message</span>
+                  Send Me a Message
                 </motion.h3>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="firstName" className="text-secondary dark:text-foreground">First Name</Label>
+                      <Label htmlFor="firstName" className="text-secondary">First Name</Label>
                       <Input
                         id="firstName"
                         {...form.register("firstName")}
-                        className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
+                        className="mt-2 bg-white border-gray-300 text-gray-900"
                       />
                       {form.formState.errors.firstName && (
                         <p className="text-red-500 text-sm mt-1">
@@ -135,11 +135,11 @@ export default function ContactSection() {
                       )}
                     </div>
                     <div>
-                      <Label htmlFor="lastName" className="text-secondary dark:text-foreground">Last Name</Label>
+                      <Label htmlFor="lastName" className="text-secondary">Last Name</Label>
                       <Input
                         id="lastName"
                         {...form.register("lastName")}
-                        className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
+                        className="mt-2 bg-white border-gray-300 text-gray-900"
                       />
                       {form.formState.errors.lastName && (
                         <p className="text-red-500 text-sm mt-1">
@@ -149,12 +149,12 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div>
-                    <Label htmlFor="email" className="text-secondary dark:text-foreground">Email Address</Label>
+                    <Label htmlFor="email" className="text-secondary">Email Address</Label>
                     <Input
                       id="email"
                       type="email"
                       {...form.register("email")}
-                      className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
+                      className="mt-2 bg-white border-gray-300 text-gray-900"
                     />
                     {form.formState.errors.email && (
                       <p className="text-red-500 text-sm mt-1">
@@ -163,12 +163,12 @@ export default function ContactSection() {
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="projectType" className="text-secondary dark:text-foreground">Project Type</Label>
+                    <Label htmlFor="projectType" className="text-secondary">Project Type</Label>
                     <Select onValueChange={(value) => form.setValue("projectType", value)}>
-                      <SelectTrigger className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground">
+                      <SelectTrigger className="mt-2 bg-white border-gray-300 text-gray-900">
                         <SelectValue placeholder="Select a project type" />
                       </SelectTrigger>
-                      <SelectContent className="bg-white dark:bg-background border-gray-300 dark:border-gray-600">
+                      <SelectContent className="bg-white border-gray-300">
                         <SelectItem value="web">Web Application</SelectItem>
                         <SelectItem value="mobile">Mobile App</SelectItem>
                         <SelectItem value="fullstack">Full Stack Development</SelectItem>
@@ -183,12 +183,12 @@ export default function ContactSection() {
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="budget" className="text-secondary dark:text-foreground">Budget Range</Label>
+                    <Label htmlFor="budget" className="text-secondary">Budget Range</Label>
                     <Select onValueChange={(value) => form.setValue("budget", value)}>
-                      <SelectTrigger className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground">
+                      <SelectTrigger className="mt-2 bg-white border-gray-300 text-gray-900">
                         <SelectValue placeholder="Select budget range" />
                       </SelectTrigger>
-                      <SelectContent className="bg-white dark:bg-background border-gray-300 dark:border-gray-600">
+                      <SelectContent className="bg-white border-gray-300">
                         <SelectItem value="5-10k">$5,000 - $10,000</SelectItem>
                         <SelectItem value="10-25k">$10,000 - $25,000</SelectItem>
                         <SelectItem value="25-50k">$25,000 - $50,000</SelectItem>
@@ -202,13 +202,13 @@ export default function ContactSection() {
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="message" className="text-secondary dark:text-foreground">Project Details</Label>
+                    <Label htmlFor="message" className="text-secondary">Project Details</Label>
                     <Textarea
                       id="message"
                       {...form.register("message")}
                       rows={4}
                       placeholder="Tell me about your project..."
-                      className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
+                      className="mt-2 bg-white border-gray-300 text-gray-900"
                     />
                     {form.formState.errors.message && (
                       <p className="text-red-500 text-sm mt-1">
@@ -224,7 +224,7 @@ export default function ContactSection() {
                   >
                     <motion.button
                       type="submit" 
-                      className="w-full bg-primary hover:bg-primary/80 dark:bg-primary dark:hover:bg-primary/80 pulse-glow group px-4 py-2 rounded-md font-medium text-white transition-colors duration-200"
+                      className="w-full bg-primary hover:bg-primary/80 group px-4 py-2 rounded-md font-medium text-white transition-colors duration-200"
                       disabled={isSubmitting}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -254,8 +254,8 @@ export default function ContactSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-secondary mb-6">Get In Touch</h3>
-              <p className="text-lg text-gray-600 mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-6">Get In Touch</h3>
+              <p className="text-lg text-gray-300 mb-8">
                 I'm always excited to take on new challenges and collaborate on innovative projects. 
                 Whether you need a complete digital solution or want to discuss your ideas, I'm here to help.
               </p>
@@ -264,65 +264,65 @@ export default function ContactSection() {
             <div className="space-y-2">
               <a 
                 href="mailto:silverchristopher12@gmail.com" 
-                className="flex items-center p-4 rounded-lg hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:scale-105 group cursor-pointer"
+                className="flex items-center p-4 rounded-lg hover:bg-primary/5 transition-all duration-300 hover:scale-105 group cursor-pointer"
               >
-                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mr-4 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors duration-300">
+                <div className="bg-primary/10 p-3 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors duration-300">
                   <Mail className="text-primary h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
-                  <div className="font-semibold text-secondary dark:text-foreground group-hover:text-primary dark:group-hover:text-primary transition-colors duration-300">Email</div>
-                  <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">silverchristopher12@gmail.com</div>
+                  <div className="font-semibold text-primary group-hover:text-accent transition-colors duration-300">Email</div>
+                  <div className="text-foreground group-hover:text-accent transition-colors duration-300">silverchristopher12@gmail.com</div>
                 </div>
               </a>
 
               <a 
                 href="tel:+2348135971304" 
-                className="flex items-center p-4 rounded-lg hover:bg-primary/5 dark:hover:bg-primary/10 transition-all duration-300 hover:scale-105 group cursor-pointer"
+                className="flex items-center p-4 rounded-lg hover:bg-primary/5 transition-all duration-300 hover:scale-105 group cursor-pointer"
               >
-                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mr-4 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors duration-300">
+                <div className="bg-primary/10 p-3 rounded-lg mr-4 group-hover:bg-primary/20 transition-colors duration-300">
                   <Phone className="text-primary h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
-                  <div className="font-semibold text-secondary dark:text-foreground group-hover:text-primary dark:group-hover:text-primary transition-colors duration-300">Phone</div>
-                  <div className="text-gray-600 dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">(+234) 813-3971-304</div>
+                  <div className="font-semibold text-primary group-hover:text-accent transition-colors duration-300">Phone</div>
+                  <div className="text-foreground group-hover:text-accent transition-colors duration-300">(+234) 813-3971-304</div>
                 </div>
               </a>
 
               <div className="flex items-center p-4 rounded-lg group">
-                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mr-4">
+                <div className="bg-primary/10 p-3 rounded-lg mr-4">
                   <MapPin className="text-primary h-6 w-6" />
                 </div>
                 <div>
-                  <div className="font-semibold text-secondary dark:text-foreground">Location</div>
-                  <div className="text-gray-600 dark:text-gray-300">Lagos, Nigeria</div>
+                  <div className="font-semibold text-primary">Location</div>
+                  <div className="text-foreground">Lagos, Nigeria</div>
                 </div>
               </div>
 
               <div className="flex items-center p-4 rounded-lg group">
-                <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mr-4">
+                <div className="bg-primary/10 p-3 rounded-lg mr-4">
                   <Clock className="text-primary h-6 w-6" />
                 </div>
                 <div>
-                  <div className="font-semibold text-secondary dark:text-foreground">Response Time</div>
-                  <div className="text-gray-600 dark:text-gray-300">Within 24 hours</div>
+                  <div className="font-semibold text-primary">Response Time</div>
+                  <div className="text-foreground">Within 24 hours</div>
                 </div>
               </div>
             </div>
 My approach combines technical expertise with user-centered design principles. I believe that great software should be invisible to the user – powerful, intuitive, and reliable.
             <div className="pt-8">
-              <h4 className="text-lg font-semibold text-secondary dark:text-foreground mb-4">Follow Me</h4>
+              <h4 className="text-lg font-semibold text-gray-300 mb-4">Follow Me</h4>
               <div className="flex space-x-4">
-                <a href="#" className="bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
-                  <Github className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                <a href="#" className="bg-gray-100 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
+                  <Github className="h-5 w-5 text-gray-700" />
                 </a>
-                <a href="#" className="bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
-                  <Linkedin className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                <a href="#" className="bg-gray-100 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
+                  <Linkedin className="h-5 w-5 text-gray-700" />
                 </a>
-                <a href="#" className="bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
-                  <Twitter className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                <a href="#" className="bg-gray-100 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
+                  <Twitter className="h-5 w-5 text-gray-700" />
                 </a>
-                <a href="#" className="bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
-                  <Dribbble className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                <a href="#" className="bg-gray-100 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
+                  <Dribbble className="h-5 w-5 text-gray-700" />
                 </a>
               </div>
             </div>

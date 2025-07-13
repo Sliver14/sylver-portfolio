@@ -85,13 +85,13 @@ export default function PortfolioSection() {
   );
 
   return (
-    <section id="portfolio" className="py-20 lg:py-32 bg-neutral dark:bg-neutral relative overflow-hidden">
+    <section id="portfolio" className="py-10 lg:py-16 bg-neutral relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-16 left-8 w-40 h-40 bg-primary/8 dark:bg-primary/15 rounded-full blur-3xl floating-animation"></div>
-        <div className="absolute bottom-20 right-12 w-32 h-32 bg-accent/12 dark:bg-accent/20 rounded-full blur-2xl floating-animation" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/3 right-1/5 w-24 h-24 bg-primary/15 dark:bg-primary/25 rounded-full blur-xl rotate-slow"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-16 h-16 bg-accent/20 dark:bg-accent/30 rounded-full blur-sm bounce-gentle"></div>
+        <div className="absolute top-16 left-8 w-40 h-40 bg-primary/8 rounded-full blur-3xl floating-animation"></div>
+        <div className="absolute bottom-20 right-12 w-32 h-32 bg-accent/12 rounded-full blur-2xl floating-animation" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/3 right-1/5 w-24 h-24 bg-primary/15 rounded-full blur-xl rotate-slow"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-16 h-16 bg-accent/20 rounded-full blur-sm bounce-gentle"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -107,16 +107,16 @@ export default function PortfolioSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-3xl lg:text-5xl font-bold text-secondary dark:text-foreground mb-6"
+            className="text-3xl lg:text-5xl font-bold text-primary mb-6"
           >
-            Featured <span className="text-gradient">Projects</span>
+            Featured <span>Projects</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-foreground max-w-3xl mx-auto"
           >
             A showcase of my recent work in web and mobile development
           </motion.p>
@@ -143,8 +143,8 @@ export default function PortfolioSection() {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 ${
                   activeFilter === filter.id
-                    ? "bg-primary text-white hover:bg-primary/80 dark:bg-primary dark:hover:bg-primary/80 pulse-glow"
-                    : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 border-gray-300 dark:border-gray-600"
+                    ? "bg-primary text-white hover:bg-primary/80"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200 border-gray-300"
                 }`}
               >
                 {filter.label}
@@ -163,7 +163,7 @@ export default function PortfolioSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
             >
-              <Card className="overflow-hidden hover:shadow-2xl dark:hover:shadow-primary/10 transition-all duration-500 bg-white dark:bg-card border-2 border-transparent hover:border-primary/20 dark:hover:border-primary/30 group">
+              <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 bg-black/20 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 group">
                 <div className="relative overflow-hidden">
                   <motion.img
                     src={project.image}
@@ -177,12 +177,12 @@ export default function PortfolioSection() {
                   </div>
                 </div>
                 <CardContent className="p-6 relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-lg"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-lg"></div>
                   <motion.h3 
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
-                    className="text-xl font-bold text-secondary dark:text-foreground mb-2 relative z-10 group-hover:text-primary dark:group-hover:text-primary transition-colors duration-300"
+                    className="text-xl font-bold text-primary mb-2 relative z-10 group-hover:text-primary transition-colors duration-300"
                   >
                     {project.title}
                   </motion.h3>
@@ -190,7 +190,7 @@ export default function PortfolioSection() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}
-                    className="text-gray-600 dark:text-gray-300 mb-4 relative z-10"
+                    className="text-foreground mb-4 relative z-10"
                   >
                     {project.description}
                   </motion.p>
@@ -207,7 +207,7 @@ export default function PortfolioSection() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.1 + 0.5 + techIndex * 0.1 }}
                       >
-                        <Badge variant="secondary" className="text-xs bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors duration-300">
+                        <Badge variant="secondary" className="text-xs bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-300">
                           {tech}
                         </Badge>
                       </motion.div>
@@ -219,7 +219,7 @@ export default function PortfolioSection() {
                     transition={{ duration: 0.4, delay: index * 0.1 + 0.6 }}
                     className="flex justify-between items-center relative z-10"
                   >
-                    <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80 dark:text-primary dark:hover:text-primary/80 hover:bg-primary/10 dark:hover:bg-primary/20 group/btn">
+                    <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80 group/btn">
                       {project.categories.includes("mobile") ? (
                         <Smartphone className="mr-2 h-4 w-4 group-hover/btn:bounce-gentle" />
                       ) : (
@@ -227,7 +227,7 @@ export default function PortfolioSection() {
                       )}
                       {project.categories.includes("mobile") ? "App Store" : "Live Demo"}
                     </Button>
-                    <Button variant="ghost" size="sm" className="text-gray-600 dark:text-gray-400 hover:text-secondary dark:hover:text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 group/btn">
+                    <Button variant="ghost" size="sm" className="text-gray-300 hover:text-secondary hover:bg-gray-100 group/btn">
                       <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform duration-300" />
                       Code
                     </Button>
@@ -245,7 +245,7 @@ export default function PortfolioSection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Button size="lg" className="bg-primary hover:bg-primary/80 dark:bg-primary dark:hover:bg-primary/80 pulse-glow">
+          <Button size="lg" className="bg-primary hover:bg-primary/80">
             View All Projects
           </Button>
         </motion.div>
