@@ -284,7 +284,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div className="font-semibold text-primary group-hover:text-accent transition-colors duration-300">Phone</div>
-                  <div className="text-foreground group-hover:text-accent transition-colors duration-300">(+234) 813-3971-304</div>
+                  <div className="text-foreground group-hover:text-accent transition-colors duration-300">(+234) 813-35971-304</div>
                 </div>
               </a>
 
