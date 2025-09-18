@@ -11,11 +11,11 @@ import { Mail, Phone, MapPin, Clock, Send, Github, Linkedin, Twitter, Dribbble }
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { insertContactSchema } from "@shared/schema";
+import { insertContactSchema } from "@/shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
-import type { InsertContact } from "@shared/schema";
+import type { InsertContact } from "@/shared/schema";
 
 export default function ContactSection() {
   const { toast } = useToast();
@@ -28,8 +28,7 @@ export default function ContactSection() {
       lastName: "",
       email: "",
       projectType: "",
-      budget: "",
-      message: "",
+      budgetRange: "",
     },
   });
 
@@ -184,8 +183,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <Label htmlFor="budget" className="text-white">Budget Range</Label>
-                    <Select onValueChange={(value) => form.setValue("budget", value)}>
-                      <SelectTrigger className="mt-2 bg-white border-gray-300 text-gray-900">
+                                         <Select onValueChange={(value) => form.setValue("budgetRange", value)}>                      <SelectTrigger className="mt-2 bg-white border-gray-300 text-gray-900">
                         <SelectValue placeholder="Select budget range" />
                       </SelectTrigger>
                       <SelectContent className="bg-secondary border-gray-300">
@@ -195,27 +193,13 @@ export default function ContactSection() {
                         <SelectItem value="50k+">$50,000+</SelectItem>
                       </SelectContent>
                     </Select>
-                    {form.formState.errors.budget && (
+                    {form.formState.errors.budgetRange && (
                       <p className="text-red-500 text-sm mt-1">
-                        {form.formState.errors.budget.message}
+                        {form.formState.errors.budgetRange.message}
                       </p>
                     )}
                   </div>
-                  <div>
-                    <Label htmlFor="message" className="text-white">Project Details</Label>
-                    <Textarea
-                      id="message"
-                      {...form.register("message")}
-                      rows={4}
-                      placeholder="Tell me about your project..."
-                      className="mt-2 bg-white border-gray-300 text-gray-900"
-                    />
-                    {form.formState.errors.message && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {form.formState.errors.message.message}
-                      </p>
-                    )}
-                  </div>
+
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
