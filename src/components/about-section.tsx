@@ -6,7 +6,7 @@ export default function AboutSection() {
   const stats = [
     { value: "6+", label: "Projects Completed" },
     { value: "3+", label: "Happy Clients" },
-    { value: "1+", label: "Year Experience" },
+    { value: "2+", label: "Year Experience" },
     { value: "7+", label: "Technologies" },
   ];
 
@@ -80,7 +80,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="text-2xl lg:text-3xl font-bold text-primary mb-6"
             >
-              1+ Year of Building <span>Digital Excellence</span>
+              2+ Year of Building <span>Digital Excellence</span>
             </motion.h3>
             <motion.p 
               initial={{ opacity: 0, y: 10 }}

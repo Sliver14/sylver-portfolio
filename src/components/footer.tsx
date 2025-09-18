@@ -48,16 +48,16 @@ export default function Footer() {
               viewport={{ once: true }}
               className="flex space-x-4"
             >
-              <a href="#" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-primary transition-all duration-300 hover:scale-110">
+              <a href="https://github.com/Sliver14" target="_blank" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-primary transition-all duration-300 hover:scale-110">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-primary transition-all duration-300 hover:scale-110">
+              <a href="https://www.linkedin.com/in/sylver-oyinaga-7409481a9/" target="_blank" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-primary transition-all duration-300 hover:scale-110">
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-primary transition-all duration-300 hover:scale-110">
+              <a href="https://x.com/SylvaFx" target="_blank" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-primary transition-all duration-300 hover:scale-110">
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-primary transition-all duration-300 hover:scale-110">
+              <a href="mailto:silverchristopher12@gmail.com" target="_blank" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-primary transition-all duration-300 hover:scale-110">
                 <Mail className="h-6 w-6" />
               </a>
             </motion.div>

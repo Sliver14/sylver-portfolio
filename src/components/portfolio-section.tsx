@@ -10,64 +10,98 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
-    title: "ShopFlow E-commerce",
-    description: "Full-stack e-commerce platform with advanced inventory management and analytics dashboard.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    technologies: ["React", "Node.js", "PostgreSQL"],
+    title: "Online Learning Platform",
+    description: "Online Learning Platform built with Next.js featuring user authentication, class and exam management, progress tracking, and efficient MySQL data handling via Prisma. Delivers a modern, interactive school experience.",
+    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758196793/d2ycssgkzvy0g2heipes.png",
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Prisma",
+        "MySQL",
+        "JWT Auth",
+        "Axios",
+        "Nodemailer",
+        "Lottie-react",
+        "Lucide-react",
+        "bcryptjs",
+        "js-cookie",
+        "react-hot-toast",
+        "uuid"
+      ],
     categories: ["web", "fullstack"],
-    demoUrl: "#",
-    codeUrl: "#",
+    demoUrl: "https://online-school-olive.vercel.app/",
+    codeUrl: "https://github.com/Sliver14/online-school",
   },
   {
     id: 2,
-    title: "FitTrack Mobile App",
-    description: "Cross-platform fitness tracking app with social features and AI-powered workout recommendations.",
-    image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    technologies: ["React Native", "Firebase", "Redux"],
-    categories: ["mobile"],
-    demoUrl: "#",
-    codeUrl: "#",
+    title: "DOI Creative Portfolio",
+    description: "DOI Creative is a modern website for film production and video editing services, built with Next.js, TypeScript, Tailwind CSS, and Supabase.",
+    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758196794/qf8yo4omfaztgco61kjk.png",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Supabase",
+        "PostgreSQL",
+        "React Query",
+        "Radix UI",
+        "Lucide React",
+        "Zod",
+        "React Hook Form",
+        "Embla Carousel",
+        "Recharts",
+        "date-fns",
+        "cmdk",
+        "Nodemailer"
+      ],
+    categories: ["web"],
+    demoUrl: "https://doi-creative.vercel.app/",
+    codeUrl: "https://github.com/Sliver14/DOI-Creative",
   },
   {
     id: 3,
-    title: "TaskMaster Dashboard",
-    description: "Real-time collaborative task management platform with advanced reporting and team analytics.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    technologies: ["Vue.js", "Express", "Socket.io"],
-    categories: ["web"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 4,
-    title: "PropertyFinder App",
-    description: "Full-stack real estate application with AR property viewing and mortgage calculator integration.",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    technologies: ["Flutter", "Django", "ARKit"],
+    title: "LWFS Mobile app",
+    description: "A community-focused mobile app built with React Native, TypeScript, and Expo. It features an e-commerce store, liveTV streaming, and user authentication, all wrapped in amodern UI styled with NativeWind (Tailwind CSS).",
+  // image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758209252/qvdwmijwexgsuedd5hku.png",
+    technologies: ["React Native", "Expo"],
     categories: ["mobile", "fullstack"],
-    demoUrl: "#",
-    codeUrl: "#",
+    demoUrl: "https://expo.dev/accounts/sliver14/projects/Loveworld-Foundation-School",
+    codeUrl: "https://github.com/Sliver14/lwfs-ReactNativeApp",
   },
-  {
-    id: 5,
-    title: "DataInsight SaaS",
-    description: "Enterprise analytics platform with machine learning insights and custom reporting tools.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    technologies: ["Next.js", "Python", "AWS"],
-    categories: ["web", "fullstack"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 6,
-    title: "ConnectHub Social",
-    description: "Privacy-focused social networking app with end-to-end encryption and community features.",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-    technologies: ["React Native", "GraphQL", "MongoDB"],
-    categories: ["mobile"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
+  // {
+  //   id: 4,
+  //   title: "PropertyFinder App",
+  //   description: "Full-stack real estate application with AR property viewing and mortgage calculator integration.",
+  //   image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+  //   technologies: ["Flutter", "Django", "ARKit"],
+  //   categories: ["mobile", "fullstack"],
+  //   demoUrl: "#",
+  //   codeUrl: "#",
+  // },
+  // {
+  //   id: 5,
+  //   title: "DataInsight SaaS",
+  //   description: "Enterprise analytics platform with machine learning insights and custom reporting tools.",
+  //   image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+  //   technologies: ["Next.js", "Python", "AWS"],
+  //   categories: ["web", "fullstack"],
+  //   demoUrl: "#",
+  //   codeUrl: "#",
+  // },
+  // {
+  //   id: 6,
+  //   title: "ConnectHub Social",
+  //   description: "Privacy-focused social networking app with end-to-end encryption and community features.",
+  //   image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+  //   technologies: ["React Native", "GraphQL", "MongoDB"],
+  //   categories: ["mobile"],
+  //   demoUrl: "#",
+  //   codeUrl: "#",
+  // },
 ];
 
 const filters = [
@@ -219,18 +253,32 @@ export default function PortfolioSection() {
                     transition={{ duration: 0.4, delay: index * 0.1 + 0.6 }}
                     className="flex justify-between items-center relative z-10"
                   >
-                    <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80 group/btn">
-                      {project.categories.includes("mobile") ? (
-                        <Smartphone className="mr-2 h-4 w-4 group-hover/btn:bounce-gentle" />
-                      ) : (
-                        <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:bounce-gentle" />
-                      )}
-                      {project.categories.includes("mobile") ? "App Store" : "Live Demo"}
-                    </Button>
-                    <Button variant="ghost" size="sm" className="text-gray-300 hover:text-secondary hover:bg-gray-100 group/btn">
-                      <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform duration-300" />
-                      Code
-                    </Button>
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block"
+                    >
+                      <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80 group/btn">
+                        {project.categories.includes("mobile") ? (
+                          <Smartphone className="mr-2 h-4 w-4 group-hover/btn:bounce-gentle" />
+                        ) : (
+                          <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:bounce-gentle" />
+                        )}
+                        {project.categories.includes("mobile") ? "App Store" : "Live Demo"}
+                      </Button>
+                    </a>
+                    <a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block"
+                    >
+                      <Button variant="ghost" size="sm" className="text-gray-300 hover:text-secondary hover:bg-gray-100 group/btn">
+                        <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform duration-300" />
+                        Code
+                      </Button>
+                    </a>
                   </motion.div>
                 </CardContent>
               </Card>
@@ -238,17 +286,17 @@ export default function PortfolioSection() {
           ))}
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Button size="lg" className="bg-primary hover:bg-primary/80">
+          <Button size="lg" className="bg-primary hover:bg-primary/80" >
             View All Projects
           </Button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

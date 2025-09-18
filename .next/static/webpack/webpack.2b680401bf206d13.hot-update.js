@@ -23,19 +23,7 @@ self["webpackHotUpdate_N_E"]("webpack",{},
 /******/ 
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("fea791ddd5da1b5d")
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/global */
-/******/ (() => {
-/******/ 	__webpack_require__.g = (function() {
-/******/ 		if (typeof globalThis === 'object') return globalThis;
-/******/ 		try {
-/******/ 			return this || new Function('return this')();
-/******/ 		} catch (e) {
-/******/ 			if (typeof window === 'object') return window;
-/******/ 		}
-/******/ 	})();
+/******/ 	__webpack_require__.h = () => ("140bf05de202146a")
 /******/ })();
 /******/ 
 /******/ /* webpack/runtime/nonce */

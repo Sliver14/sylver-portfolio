@@ -1,39 +1,42 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { insertContactSchema } from '@shared/schema'
-import { supabase } from '@/lib/supabase'
-import { z } from 'zod'
+import { supabase } from '@/lib/db'
+import { insertContactSchema } from '@/shared/schema'
 
-export async function POST(req: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
-    const body = await req.json()
-    const contactData = insertContactSchema.parse(body)
+    const body = await request.json()
     
-    // Insert contact into Supabase
+    // Validate the request body
+    const validatedData = insertContactSchema.parse(body)
+    
+    // Insert into database
     const { data, error } = await supabase
       .from('contacts')
-      .insert({
-        first_name: contactData.firstName,
-        last_name: contactData.lastName,
-        email: contactData.email,
-        project_type: contactData.projectType,
-        budget: contactData.budget,
-        message: contactData.message,
-        created_at: new Date().toISOString()
-      })
+      .insert(validatedData)
       .select()
-      .single()
 
     if (error) {
-      console.error('Supabase error:', error)
-      return NextResponse.json({ error: 'Failed to submit contact form' }, { status: 500 })
+      throw error
     }
-
-    return NextResponse.json({ success: true, contact: data })
+    
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Contact form submitted successfully',
+      data: data[0]
+    })
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: 'Invalid form data', details: error.errors }, { status: 400 })
+    console.error('Contact form error:', error)
+    
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { success: false, message: error.message },
+        { status: 400 }
+      )
     }
-    console.error('Contact submission error:', error)
-    return NextResponse.json({ error: 'Failed to submit contact form' }, { status: 500 })
+    
+    return NextResponse.json(
+      { success: false, message: 'Internal server error' },
+      { status: 500 }
+    )
   }
-} 
+}

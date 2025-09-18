@@ -1,4 +1,4 @@
-// File: C:\Users\LWFS\Desktop\sylver\CODE PROJECTS\Sylver-Portfolio\src\app\layout.tsx
+// File: C:\Users\dell\Desktop\Sylver\CODE PROJECTS\Sylver-Portfolio\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -112,9 +112,9 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-2xl blur-3xl transform rotate-6 floating-animation"></div>
               <div className="absolute -inset-2 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-20 blur-xl"></div>
               <motion.img
-                src="../assets/photo_2024-02-11_14-17-47.jpg"
+                src="../assets/20240602_134323.png"
                 alt="Professional headshot of Oyinaga Sylver"
-                className="relative rounded-2xl shadow-2xl w-full h-96 max-w-md mx-auto border-2 border-white/20 object-cover"
+                className="relative rounded-2xl shadow-2xl w-full h-96 max-w-md mx-auto border-2 border-white/20 object-cover object-top"
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
               />
