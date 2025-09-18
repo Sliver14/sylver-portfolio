@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     
     // Insert into database
     const { data, error } = await supabase
-      .from('contacts')
+      .from('sylver-portfolio-contacts')
       .insert(validatedData)
       .select()
 

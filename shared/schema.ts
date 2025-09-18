@@ -6,7 +6,6 @@ export const insertContactSchema = z.object({
   email: z.string().email(),
   projectType: z.string(),
   budgetRange: z.string(),
-  projectDetails: z.string(),
 });
 
 export const insertTestimonialSchema = z.object({

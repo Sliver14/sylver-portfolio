@@ -43,7 +43,8 @@ export default function ContactSection() {
       });
       form.reset();
     },
-    onError: () => {
+    onError: (error) => {
+      console.error('Form submission error:', error);
       toast({
         title: "Failed to send message",
         description: "Please try again later or contact me directly via email.",
@@ -56,8 +57,16 @@ export default function ContactSection() {
   });
 
   const onSubmit = (data: InsertContact) => {
+    console.log('Form submitted with data:', data);
     setIsSubmitting(true);
     contactMutation.mutate(data);
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submit triggered');
+    console.log('Form errors:', form.formState.errors);
+    form.handleSubmit(onSubmit)(e);
   };
 
   return (
@@ -118,7 +127,7 @@ export default function ContactSection() {
                 >
                   Send Me a Message
                 </motion.h3>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="firstName" className="text-white">First Name</Label>
@@ -163,11 +172,17 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <Label htmlFor="projectType" className="text-white">Project Type</Label>
-                    <Select onValueChange={(value) => form.setValue("projectType", value)}>
+                    <Select 
+                      onValueChange={(value) => {
+                        console.log('Project type selected:', value);
+                        form.setValue("projectType", value);
+                      }}
+                      value={form.watch("projectType")}
+                    >
                       <SelectTrigger className="mt-2 bg-white border-gray-300 text-gray-900">
                         <SelectValue placeholder="Select a project type" />
                       </SelectTrigger>
-                      <SelectContent className="bg-secondary border-gray-300">
+                      <SelectContent className="bg-gray-900 border-gray-300">
                         <SelectItem value="web">Web Application</SelectItem>
                         <SelectItem value="mobile">Mobile App</SelectItem>
                         <SelectItem value="fullstack">Full Stack Development</SelectItem>
@@ -183,10 +198,17 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <Label htmlFor="budget" className="text-white">Budget Range</Label>
-                                         <Select onValueChange={(value) => form.setValue("budgetRange", value)}>                      <SelectTrigger className="mt-2 bg-white border-gray-300 text-gray-900">
+                    <Select 
+                      onValueChange={(value) => {
+                        console.log('Budget range selected:', value);
+                        form.setValue("budgetRange", value);
+                      }}
+                      value={form.watch("budgetRange")}
+                    >
+                      <SelectTrigger className="mt-2 bg-white border-gray-300 text-gray-900">
                         <SelectValue placeholder="Select budget range" />
                       </SelectTrigger>
-                      <SelectContent className="bg-secondary border-gray-300">
+                      <SelectContent className="bg-gray-900 border-gray-300">
                         <SelectItem value="5-10k">$5,000 - $10,000</SelectItem>
                         <SelectItem value="10-25k">$10,000 - $25,000</SelectItem>
                         <SelectItem value="25-50k">$25,000 - $50,000</SelectItem>
@@ -206,12 +228,11 @@ export default function ContactSection() {
                     transition={{ duration: 0.5, delay: 0.8 }}
                     viewport={{ once: true }}
                   >
-                    <motion.button
+                    <Button
                       type="submit" 
-                      className="w-full bg-primary hover:bg-primary/80 group px-4 py-2 rounded-md font-medium text-white transition-colors duration-200"
+                      onClick={handleFormSubmit}
+                      className="flex items-center justify-center w-full bg-primary hover:bg-primary/80 group px-4 py-3 rounded-md font-medium text-white transition-colors duration-200"
                       disabled={isSubmitting}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
                     >
                       <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                       {isSubmitting ? (
@@ -222,9 +243,9 @@ export default function ContactSection() {
                       ) : (
                         "Send Message"
                       )}
-                    </motion.button>
+                    </Button>
                   </motion.div>
-                </form>
+                </div>
               </CardContent>
             </Card>
           </motion.div>
@@ -292,7 +313,7 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
-My approach combines technical expertise with user-centered design principles. I believe that great software should be invisible to the user – powerful, intuitive, and reliable.
+
             <div className="pt-8">
               <h4 className="text-lg font-semibold text-gray-300 mb-4">Follow Me</h4>
               <div className="flex space-x-4">
@@ -305,9 +326,6 @@ My approach combines technical expertise with user-centered design principles. I
                 <a href="https://x.com/SylvaFx" target="_blank" className="bg-gray-100 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
                   <Twitter className="h-5 w-5 text-gray-700" />
                 </a>
-                {/* <a href="#" className="bg-gray-100 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white p-3 rounded-lg transition-all duration-300 hover:scale-110">
-                  <Dribbble className="h-5 w-5 text-gray-700" />
-                </a> */}
               </div>
             </div>
           </motion.div>
