@@ -64,7 +64,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg text-foreground mb-8 leading-relaxed"
             >
-              With over 1 year of experience crafting beautiful, functional web applications and mobile solutions. 
+              With over 2 year of experience crafting beautiful, functional web applications and mobile solutions. 
               I help businesses transform their ideas into powerful digital experiences that users love.
             </motion.p>
             <motion.div 
@@ -114,7 +114,7 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-2xl blur-3xl transform rotate-6 floating-animation"></div>
               <div className="absolute -inset-2 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-20 blur-xl"></div>
               <motion.img
-                src="../assets/20240602_134323.png"
+                src="../assets/photo_2024-02-11_14-17-47.png"
                 alt="Professional headshot of Oyinaga Sylver"
                 className="relative rounded-2xl shadow-2xl w-full h-96 max-w-md mx-auto border-2 border-white/20 object-cover object-top"
                 whileHover={{ scale: 1.05, rotate: 2 }}
