@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDJMMjggMTZMMTYgMzBMMCAxNkwxNiAyWiIgZmlsbD0iIzM4QjJGRiIvPgo8cGF0aCBkPSJNMTYgNkwxNiAyNkw0IDE2TDE2IDZaIiBmaWxsPSIjNjM2NkY3Ii8+Cjwvc3ZnPgo=',
-        type: 'image/svg+xml',
+        url: '/assets/photo_2024-02-11_14-17-47.png',
+        type: 'image/png',
       },
     ],
   },
