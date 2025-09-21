@@ -1,11 +1,9 @@
 import { z } from "zod";
 
 export const insertContactSchema = z.object({
-  firstName: z.string(),
-  lastName: z.string(),
+  name: z.string(),
   email: z.string().email(),
-  projectType: z.string(),
-  budgetRange: z.string(),
+  message: z.string(),
 });
 
 export const insertTestimonialSchema = z.object({

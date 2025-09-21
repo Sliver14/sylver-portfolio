@@ -24,11 +24,9 @@ export default function ContactSection() {
   const form = useForm<InsertContact>({
     resolver: zodResolver(insertContactSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      name: "",
       email: "",
-      projectType: "",
-      budgetRange: "",
+      message: "",
     },
   });
 
@@ -92,9 +90,9 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-3xl lg:text-5xl font-bold text-primary mb-6"
+            className="text-3xl lg:text-5xl font-bold text-primary mb-6 text-white"
           >
-            Let's Work <span>Together</span>
+            Let's Work <span className="text-gradient">Together</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
@@ -123,35 +121,22 @@ export default function ContactSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="text-2xl font-bold text-primary mb-6"
+                  className="text-2xl font-bold text-secondary dark:text-foreground mb-6"
                 >
-                  Send Me a Message
+                  Send Me a <span className="text-gradient">Message</span>
                 </motion.h3>
                 <div className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-1 gap-6">
                     <div>
-                      <Label htmlFor="firstName" className="text-white">First Name</Label>
+                      <Label htmlFor="name" className="text-white">Name</Label>
                       <Input
-                        id="firstName"
-                        {...form.register("firstName")}
-                        className="mt-2 bg-white border-gray-300 text-gray-900"
+                        id="name"
+                        {...form.register("name")}
+                        className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
                       />
-                      {form.formState.errors.firstName && (
+                      {form.formState.errors.name && (
                         <p className="text-red-500 text-sm mt-1">
-                          {form.formState.errors.firstName.message}
-                        </p>
-                      )}
-                    </div>
-                    <div>
-                      <Label htmlFor="lastName" className="text-white">Last Name</Label>
-                      <Input
-                        id="lastName"
-                        {...form.register("lastName")}
-                        className="mt-2 bg-white border-gray-300 text-gray-900"
-                      />
-                      {form.formState.errors.lastName && (
-                        <p className="text-red-500 text-sm mt-1">
-                          {form.formState.errors.lastName.message}
+                          {form.formState.errors.name.message}
                         </p>
                       )}
                     </div>
@@ -162,7 +147,7 @@ export default function ContactSection() {
                       id="email"
                       type="email"
                       {...form.register("email")}
-                      className="mt-2 bg-white border-gray-300 text-gray-900"
+                      className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
                     />
                     {form.formState.errors.email && (
                       <p className="text-red-500 text-sm mt-1">
@@ -171,57 +156,20 @@ export default function ContactSection() {
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="projectType" className="text-white">Project Type</Label>
-                    <Select 
-                      onValueChange={(value) => {
-                        console.log('Project type selected:', value);
-                        form.setValue("projectType", value);
-                      }}
-                      value={form.watch("projectType")}
-                    >
-                      <SelectTrigger className="mt-2 bg-white border-gray-300 text-gray-900">
-                        <SelectValue placeholder="Select a project type" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-gray-900 border-gray-300">
-                        <SelectItem value="web">Web Application</SelectItem>
-                        <SelectItem value="mobile">Mobile App</SelectItem>
-                        <SelectItem value="fullstack">Full Stack Development</SelectItem>
-                        <SelectItem value="consultation">Consultation</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    {form.formState.errors.projectType && (
+                    <Label htmlFor="message" className="text-white">Message</Label>
+                    <Textarea
+                      id="message"
+                      // type="textarea"
+                      {...form.register("message")}
+                      className="mt-2 bg-white dark:bg-background border-gray-300 dark:border-gray-600 text-gray-900 dark:text-foreground"
+                    />
+                    {form.formState.errors.email && (
                       <p className="text-red-500 text-sm mt-1">
-                        {form.formState.errors.projectType.message}
+                        {form.formState.errors.email.message}
                       </p>
                     )}
                   </div>
-                  <div>
-                    <Label htmlFor="budget" className="text-white">Budget Range</Label>
-                    <Select 
-                      onValueChange={(value) => {
-                        console.log('Budget range selected:', value);
-                        form.setValue("budgetRange", value);
-                      }}
-                      value={form.watch("budgetRange")}
-                    >
-                      <SelectTrigger className="mt-2 bg-white border-gray-300 text-gray-900">
-                        <SelectValue placeholder="Select budget range" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-gray-900 border-gray-300">
-                        <SelectItem value="5-10k">$5,000 - $10,000</SelectItem>
-                        <SelectItem value="10-25k">$10,000 - $25,000</SelectItem>
-                        <SelectItem value="25-50k">$25,000 - $50,000</SelectItem>
-                        <SelectItem value="50k+">$50,000+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    {form.formState.errors.budgetRange && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {form.formState.errors.budgetRange.message}
-                      </p>
-                    )}
-                  </div>
-
+                  
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}

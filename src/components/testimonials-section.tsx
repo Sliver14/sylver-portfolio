@@ -80,9 +80,9 @@ export default function TestimonialsSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-3xl lg:text-5xl font-bold text-primary mb-6"
+            className="text-3xl lg:text-5xl font-bold text-primary mb-6 text-white"
           >
-            What <span>Clients Say</span>
+            What <span className="text-gradient">Clients Say</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
