@@ -57,7 +57,7 @@ export default function AboutSection() {
           >
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 dark:from-primary/30 dark:to-accent/30 rounded-2xl blur-xl floating-animation"></div>
             <motion.img
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+              src="https://res.cloudinary.com/dfi8bpolg/image/upload/v1758491905/kbyktnl4namclo4p1ln0.avif"
               alt="Modern developer workspace with code on multiple screens"
               className="relative rounded-2xl shadow-2xl w-full h-auto border border-white/20"
               whileHover={{ scale: 1.02, rotateY: 5 }}
