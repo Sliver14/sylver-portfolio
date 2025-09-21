@@ -9,22 +9,22 @@ import { useGithubStats } from "@/hooks/use-github";
 const skillCategories = [
   {
     title: "Frontend",
-    icon: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
+    icon: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758496422/u2adjclyzub5ve3frq3l.jpg",
     skills: ["React & Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
     title: "Backend",
-    icon: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
+    icon: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758496600/v7hn6dl1kmqvrajqv1z9.jpg",
     skills: ["Node.js & Express", "PostgreSQL", "MongoDB", "MySql"],
   },
   {
     title: "Mobile",
-    icon: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
+    icon: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758496422/kyr8ucicprqauozerppt.jpg",
     skills: ["React Native", "React Native Expo", "Web Progress App"],
   },
   {
     title: "DevOps",
-    icon: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
+    icon: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758496421/zlosceazppzeg09x2k5o.jpg",
     skills: ["AWS & Azure", "Docker", "CI/CD Pipelines", "Git & GitHub"],
   },
 ];
@@ -33,7 +33,7 @@ export default function SkillsSection() {
   const { data: githubStats, isLoading } = useGithubStats("oyinagasylver");
 
   return (
-    <section id="skills" className="py-20 lg:py-32 bg-neutral dark:bg-background relative overflow-hidden">
+    <section id="skills" className="py-12 lg:py-16 bg-neutral dark:bg-background relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-24 left-12 w-28 h-28 bg-accent/10 dark:bg-accent/20 rounded-full blur-2xl floating-animation"></div>
@@ -86,11 +86,12 @@ export default function SkillsSection() {
                   <motion.img
                     src={category.icon}
                     alt={`${category.title} technology stack`}
-                    className="w-16 h-16 mx-auto mb-4 rounded-lg object-cover relative z-10 group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 360 }}
+                    className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-4 rounded-lg object-cover relative z-10 group-hover:scale-110 transition-transform duration-300"
+                    // whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   />
-                  <h3 className="text-xl font-semibold text-secondary dark:text-foreground mb-2 relative z-10 group-hover:text-primary dark:group-hover:text-primary transition-colors duration-300">{category.title}</h3>
+
+                  <h3 className="text-xl font-semibold text-secondary dark:text-foreground mb-2 relative z-10 transition-colors duration-300">{category.title}</h3>
                   <ul className="text-gray-600 dark:text-gray-300 space-y-1 relative z-10">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.li 

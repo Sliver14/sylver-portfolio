@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, Eye, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { TypeAnimation } from 'react-type-animation';
 
 export default function HeroSection() {
   const scrollToPortfolio = () => {
@@ -23,7 +24,7 @@ export default function HeroSection() {
         <div className="absolute top-1/3 right-1/3 w-8 h-8 bg-accent/40 rounded-full blur-sm rotate-slow"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,14 +42,26 @@ export default function HeroSection() {
                   Available for New Projects
                 </Badge>
               </motion.div>
+
               <motion.h1 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-4xl lg:text-6xl font-bold text-secondary dark:text-foreground leading-tight"
               >
-                Hi, I'm <span className="text-gradient">Sylver Oyinaga</span>
+                {/* Hi, I'm <span className="text-gradient">Sylver Oyinaga</span> */}
+                <TypeAnimation
+                  sequence={[
+                    "Hi, I'm Sylver Oyinaga", // text
+                    1000, // wait 1s after typing
+                  ]}
+                  wrapper="h1"
+                  cursor={true}
+                  repeat={0}
+                  className="type-animation text-4xl lg:text-6xl font-bold text-secondary dark:text-foreground leading-tight"
+                />
               </motion.h1>
+              
               <motion.p 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -68,22 +81,28 @@ export default function HeroSection() {
               I help businesses transform their ideas into powerful digital experiences that users love.
             </motion.p>
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 w-full"
             >
-              <a href="/assets/OYINAGA_SYLVER_OLUCHI_cv.pdf" target="_blank">
-                <Button size="lg" className="bg-primary color-white hover:bg-primary/80 dark:bg-primary dark:hover:bg-primary/80 pulse-glow group text-white hover:text-white">
+              <a href="/assets/OYINAGA_SYLVER_OLUCHI_cv.pdf" target="_blank" className="w-full sm:w-auto">
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-primary text-white hover:bg-primary/80 dark:bg-primary dark:hover:bg-primary/80 pulse-glow group"
+                >
                   <Eye className="mr-2 h-4 w-4 group-hover:bounce-gentle" />
                   Download Resume
                 </Button>
               </a>
-              <Button size="lg" variant="outline" onClick={scrollToPortfolio} className="border-primary text-primary dark:border-primary dark:text-primary hover:bg-primary/10 dark:hover:bg-primary/20">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                onClick={scrollToPortfolio} 
+                className="w-full sm:w-auto border-primary text-primary dark:border-primary dark:text-primary hover:bg-primary/10 dark:hover:bg-primary/20"
+              >
                 <Eye className="mr-2 h-4 w-4" />
                 View My Work
               </Button>
             </motion.div>
+
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -116,7 +135,7 @@ export default function HeroSection() {
               <motion.img
                 src="../assets/photo_2024-02-11_14-17-47.png"
                 alt="Professional headshot of Oyinaga Sylver"
-                className="relative rounded-2xl shadow-2xl w-full h-auto max-w-md mx-auto border-2 border-white/20 dark:border-white/10"
+                className="relative rounded-2xl shadow-2xl w-60 sm:w-72 lg:w-80 mx-auto border-2 border-white/20 dark:border-white/10"
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
               />
