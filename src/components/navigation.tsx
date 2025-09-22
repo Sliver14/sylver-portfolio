@@ -17,6 +17,8 @@ const navItems = [
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -31,6 +33,7 @@ export default function Navigation() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    setIsSheetOpen(false); // Close sheet after clicking
   };
 
   return (
@@ -65,7 +68,7 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Navigation */}
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden hover:bg-primary/20 dark:hover:bg-primary/30">
                 <Menu className="h-6 w-6 text-secondary dark:text-foreground" />
