@@ -80,7 +80,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               className="text-2xl lg:text-3xl font-bold text-secondary dark:text-foreground mb-6"
             >
-              3+ Years of Building <span className="text-gradient">Digital Excellence</span>
+              2+ Years of Building <span className="text-gradient">Digital Excellence</span>
             </motion.h3>
             <motion.p 
               initial={{ opacity: 0, y: 10 }}
