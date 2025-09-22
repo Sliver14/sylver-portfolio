@@ -12,7 +12,7 @@ const projects = [
   {
     id: 1,
     title: "Online Learning Platform",
-    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758196793/d2ycssgkzvy0g2heipes.png",
+    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758575897/gzxqhpop7itbukgan7zx.png",
     technologies: ["Next.js", "TypeScript", "MySQL"],
     categories: ["web", "fullstack"],
     demoUrl: "https://online-school-olive.vercel.app/",
@@ -21,7 +21,7 @@ const projects = [
   {
     id: 2,
     title: "My Store",
-    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758498671/sso1f7ncyggdqur2kmta.png",
+    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758575996/zboltvp9zjwqj5hansgq.png",
     technologies: ["Next.js", "TypeScript", "Mongoose"],
     categories: ["web"],
     demoUrl: "https://my-store-three-pearl.vercel.app/",
@@ -39,7 +39,7 @@ const projects = [
   {
     id: 4,
     title: "DOI Creative Portfolio",
-    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758196794/qf8yo4omfaztgco61kjk.png",
+    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758576162/hozwrpuahva5kckj83nw.png",
     technologies: ["Next.js", "TypeScript", "Supabase"],
     categories: ["web"],
     demoUrl: "https://doi-creative.vercel.app/",
