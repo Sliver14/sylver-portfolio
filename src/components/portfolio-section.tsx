@@ -33,7 +33,7 @@ const projects = [
     image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758769303/bm9dg691dtqlzthvpo7e.png",
     technologies: ["Next.js", "TypeScript", "MongoDB"],
     categories: ["web", "fullstack"],
-    demoUrl: "https://expo.dev/accounts/sliver14/projects/Loveworld-Foundation-School",
+    demoUrl: "https://github.com/Sliver14/nexus-chat/tree/master",
     codeUrl: "https://github.com/Sliver14/nexus-chat/tree/master",
   },
   {
