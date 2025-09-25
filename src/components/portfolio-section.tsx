@@ -29,7 +29,16 @@ const projects = [
   },
   {
     id: 3,
-    title: "Department Mobile app",
+    title: "Social Chat App",
+    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758209252/qvdwmijwexgsuedd5hku.png",
+    technologies: ["Next.js", "TypeScript", "MongoDB"],
+    categories: ["web", "fullstack"],
+    demoUrl: "https://expo.dev/accounts/sliver14/projects/Loveworld-Foundation-School",
+    codeUrl: "https://github.com/Sliver14/nexus-chat/tree/master",
+  },
+  {
+    id: 4,
+    title: "Mobile app",
     image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758209252/qvdwmijwexgsuedd5hku.png",
     technologies: ["React Native", "Expo"],
     categories: ["mobile", "fullstack"],
@@ -37,7 +46,7 @@ const projects = [
     codeUrl: "https://github.com/Sliver14/lwfs-ReactNativeApp",
   },
   {
-    id: 4,
+    id: 5,
     title: "DOI Creative Portfolio",
     image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758576162/hozwrpuahva5kckj83nw.png",
     technologies: ["Next.js", "TypeScript", "Supabase"],
