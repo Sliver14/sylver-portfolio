@@ -30,7 +30,7 @@ const projects = [
   {
     id: 3,
     title: "Social Chat App",
-    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758209252/qvdwmijwexgsuedd5hku.png",
+    image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758769303/bm9dg691dtqlzthvpo7e.png",
     technologies: ["Next.js", "TypeScript", "MongoDB"],
     categories: ["web", "fullstack"],
     demoUrl: "https://expo.dev/accounts/sliver14/projects/Loveworld-Foundation-School",
