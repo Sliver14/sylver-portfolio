@@ -33,7 +33,7 @@ const projects = [
     image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758769303/bm9dg691dtqlzthvpo7e.png",
     technologies: ["Next.js", "TypeScript", "MongoDB"],
     categories: ["web", "fullstack"],
-    demoUrl: "https://github.com/Sliver14/nexus-chat/tree/master",
+    demoUrl: "https://nexus-chat-tau.vercel.app/",
     codeUrl: "https://github.com/Sliver14/nexus-chat/tree/master",
   },
   {
