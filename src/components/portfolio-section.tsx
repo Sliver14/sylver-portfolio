@@ -28,7 +28,7 @@ const projects = [
   //   codeUrl: "https://github.com/Sliver14/my-store",
   // },
   {
-    id: 3,
+    id: 2,
     title: "Social Chat App",
     image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758769303/bm9dg691dtqlzthvpo7e.png",
     technologies: ["Next.js", "TypeScript", "MongoDB"],
@@ -37,7 +37,7 @@ const projects = [
     codeUrl: "https://github.com/Sliver14/nexus-chat/tree/master",
   },
   {
-    id: 4,
+    id: 3,
     title: "Mobile app",
     image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758209252/qvdwmijwexgsuedd5hku.png",
     technologies: ["React Native", "Expo"],
@@ -46,7 +46,7 @@ const projects = [
     codeUrl: "https://github.com/Sliver14/lwfs-ReactNativeApp",
   },
   {
-    id: 5,
+    id: 4,
     title: "DOI Creative Portfolio",
     image: "https://res.cloudinary.com/dfi8bpolg/image/upload/v1758576162/hozwrpuahva5kckj83nw.png",
     technologies: ["Next.js", "TypeScript", "Supabase"],
